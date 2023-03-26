@@ -25,8 +25,8 @@ def main():
     PrintAllGamesBettingData(betting_api_instance, year, week, conference)
 
     # Choose team, line provider, spread or over/under, and amount to bet
-    chosenTeam = input("\nEnter the team you would like to bet on\n")
-    betProvider = input("\nEnter the name of your bet provider\n")
+    chosenTeam = input("\nEnter the team you would like to bet on:\n")
+    betProvider = input("\nEnter the name of your bet provider:\n")
     betType = input("\nSpread or O/U?\n")
     userBetAmount = input("\nHow many dollars would you like to bet?\n")
 

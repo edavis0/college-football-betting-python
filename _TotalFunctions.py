@@ -22,7 +22,6 @@ def GetUserTotalLine(betProvider, api_instance, year, week, team, conference):
     try:
         # Retrieve API response
         apiResponse = api_instance.get_lines(year = year, week = week, team = team, conference = conference)
-        print(type(apiResponse))
         
         # Assign game line information to a list variable
         listOfLines = apiResponse[0].lines
