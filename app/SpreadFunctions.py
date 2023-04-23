@@ -15,12 +15,12 @@ def GetFavoredAndUnfavoredTeamList(betProvider, api_instance, year, week, team, 
         # Iterate through list of providers and their information to find user input
         for i in range(len(listOfLines)):
             # note that provider names are changed to lowercase to minimize error
-            if (listOfLines[i]['provider'].lower() == betProvider.lower()):
+            if (listOfLines[i].provider.lower() == betProvider.lower()):
                 j = i
 
         # Create a string containing the favored team using regex and identify favored team
         favoredTeamUnedited = re.search(
-            '[a-zA-Z ]*', listOfLines[j]['formattedSpread']).group()
+            '[a-zA-Z ]*', listOfLines[j].formatted_spread).group()
         favoredTeam = favoredTeamUnedited.rstrip()
 
         # Identify unfavored team
@@ -61,11 +61,11 @@ def GetUserSpreadLine(betProvider, api_instance, year, week, team, conference, l
         # Iterate through list of providers and their information to find user input
         for i in range(listLength):
             # note that provider names are changed to lowercase to minimize error
-            if (listOfLines[i]['provider'].lower() == betProvider.lower()):
+            if (listOfLines[i].provider.lower() == betProvider.lower()):
                 j = i
 
         # Return the spread
-        chosenSpread = listOfLines[j]['spread']
+        chosenSpread = listOfLines[j].spread
         chosenSpread = float(chosenSpread)
 
         # Add correct positive or negative sign to spread, because if favored team is away there is a positive sign on the spread from the api (and vice versa)
@@ -142,15 +142,16 @@ def PrintSpreadBetCurrentScoreInfo(homeVsVistorScore, listScoreDifferential):
 # Calculate cash based on point spread bet and returns the new cash amount
 # RETURN TYPE: integrer
 def CalculateCashFromSpreadBet(currentCash, betAmount, betOnFavoredTeam, betSpread, scoreDiff):
+    
     # Update currentCash based on bets
     if (scoreDiff < betSpread and betOnFavoredTeam == True):      # Won bet
         newCash = currentCash + int(betAmount)
     elif (scoreDiff > betSpread and betOnFavoredTeam == True):    # Lost bet
         newCash = currentCash - int(betAmount)
     elif (scoreDiff < betSpread and betOnFavoredTeam == False):   # Lost bet
-        newCash = currentCash + int(betAmount)
-    elif (scoreDiff > betSpread and betOnFavoredTeam == False):   # Won bet
         newCash = currentCash - int(betAmount)
+    elif (scoreDiff > betSpread and betOnFavoredTeam == False):   # Won bet
+        newCash = currentCash + int(betAmount)
     else:                                                       # Pushed bet
         newCash = currentCash
     return(newCash)

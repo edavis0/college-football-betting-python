@@ -29,11 +29,11 @@ def GetUserTotalLine(betProvider, api_instance, year, week, team, conference):
 
         # Iterate through list of providers and their information to find user input
         for i in range(listLength):
-            if (listOfLines[i]['provider'].lower() == betProvider.lower()): # note that provider names are changed to lowercase to minimize error
+            if (listOfLines[i].provider.lower() == betProvider.lower()): # note that provider names are changed to lowercase to minimize error
                 j = i
 
         # Return the spread or O/U
-        betLine = listOfLines[j]['overUnder']
+        betLine = listOfLines[j].over_under
         betLine = float(betLine)
 
     except ApiException as e:
@@ -71,6 +71,7 @@ def PrintTotalBetCurrentScoreInfo(homeVsVistorScore,totalScore):
 # Calculate cash based on point total O/U bet
 # RETURN TYPE: integer
 def CalculateCashFromTotalBet(currentCash, betAmount, betLine, betOnOver, actualTotalScore):
+    
     # Update currentCash based on bets
     if (betLine < actualTotalScore and betOnOver == True):      # Won bet
         newCash = currentCash + int(betAmount)

@@ -1,9 +1,9 @@
 # Import core functions from other .py files in this package 
-from _PrintFunctions import *
-from _SpreadFunctions import *
-from _TotalFunctions import *
-from _CatchAllFunctions import *
-from _CreateAPIInstance import *
+from PrintFunctions import *
+from SpreadFunctions import *
+from TotalFunctions import *
+from CatchAllFunctions import *
+from CreateAPIInstance import *
 
 def main():
 
@@ -17,18 +17,18 @@ def main():
     print("\nGambler's name: {} {}\nGambler's current cash: ${}\n".format(userFirstName, userLastName, userCurrentCash))
     
     # Input game information
-    year = 2021 
-    conference = input('Enter the conference name:\n')
-    week = int(input('\nEnter the week:\n'))
+    year = 2022 
+    conference = input('Enter the conference name: ')
+    week = int(input('Enter the week: '))
     
     # Print betting information to console    
     PrintAllGamesBettingData(betting_api_instance, year, week, conference)
 
     # Choose team, line provider, spread or over/under, and amount to bet
-    chosenTeam = input("\nEnter the team you would like to bet on:\n")
-    betProvider = input("\nEnter the name of your bet provider:\n")
-    betType = input("\nSpread or O/U?\n")
-    userBetAmount = input("\nHow many dollars would you like to bet?\n")
+    chosenTeam = input("\nEnter the team you would like to bet on: ")
+    betProvider = input("Enter the name of your bet provider: ")
+    betType = input("Spread or O/U? ")
+    userBetAmount = input("How many dollars would you like to bet? $")
 
     # If user chooses a point spread bet
     if (betType == "Spread" or betType == "spread"):
@@ -55,7 +55,7 @@ def main():
     elif (betType == "O/U" or betType == "o/u"):
 
         # Get user's choice of over or under
-        userInputOverOrUnder = input("\nOver or under?\n")
+        userInputOverOrUnder = input("Over or under? ")
         listUserOverOrUnder = GetUserBetOnOverOrUnder(userInputOverOrUnder)
 
         # Get the chosen total

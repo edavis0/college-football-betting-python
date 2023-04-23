@@ -23,9 +23,9 @@ def PrintAllGamesBettingData(api_instance, year, week, conference):
             for j in range(len(listLines)):
                 
                 # Pull out specific bet provider details and build a list to be printed
-                betProvider = listLines[j]['provider']
-                formattedSpread = listLines[j]['formattedSpread']
-                overUnder = listLines[j]['overUnder']
+                betProvider = listLines[j].provider
+                formattedSpread = listLines[j].formatted_spread
+                overUnder = listLines[j].over_under
                 gameInfoList = [[homeTeam, awayTeam, betProvider, formattedSpread, overUnder]]
 
                 print(tabulate(gameInfoList, tablefmt='pretty'))
