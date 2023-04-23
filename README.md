@@ -22,7 +22,7 @@ Here are the steps for creating a virtual environment and running this project i
 ## Bet Types
 Two bet types are used in this program: point spread bets and total point bets (also known as over/under bets). For more information regarding the mechanics of these bets, refer to this [link][3].
 <br>
-## _CatchAllFunctions.py
+## CatchAllFunctions.py
 ### **GetHomeVsVisitorScore(api_instance, year, week, team, conference)**
 
 Returns the current game score as a string in the following form: 
@@ -32,7 +32,7 @@ Example:
     Florida 29 - Alabama 31
 <br>
 
-## _PrintFunctions.py
+## PrintFunctions.py
 ### **PrintAllGamesBettingData(api_instance, year, week, conference)**
 
 Prints betting information for every game in the user's chosen conference and week. This is printed to console in table form using the [Tabulate Python library][4].
@@ -59,7 +59,7 @@ Example:
     William Hill (New Jersey):	Alabama -14	60
 <br>
 
-## _SpreadFunctions.py
+## SpreadFunctions.py
 ### **GetFavoredAndUnfavoredTeamList(betProvider, api_instance, year, week, team, conference)**
 
 Returns a list of the favored and unfavored teams from the chosen bet. The list's format is as follows:  
@@ -119,7 +119,7 @@ Example:
     newCash = 2750
 <br>
 
-## _TotalFunctions.py
+## TotalFunctions.py
 ### **GetUserBetOnOverOrUnder(userInputOverOrUnder)**  
 Returns a list of the user's point total bet information. The list's format is as follows: `[user bet on over or under boolean, over or under string]`. If the user bets on the over, the `boolBetOnOver` will be set to `True`. If the user bets on the under, he `boolBetOnOver` will be set to `False`.
 Example:
