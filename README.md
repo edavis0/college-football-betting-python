@@ -9,7 +9,7 @@ This repository contains source code allowing the user to simulate betting on Am
 The following sections detail the process flow of the program and its relevant functions.
 
 ## Installation
-You can simply clone this reposity and run the script by accessing the app directory and running `python3 main.py`, assuming you have a [CFBD API key](https://collegefootballdata.com/key), created a .env file with a `api-token='<API-KEY>'` entry, and install the packages in your virtual environment, as  detailed in `requirements.txt`.
+You can simply clone this reposity and run the script by accessing the app directory and running `python3 main.py`, assuming you have a [CFBD API key](https://collegefootballdata.com/key), created a .env file with a `api-token=<API-KEY>` entry, and install the packages in your virtual environment, as  detailed in `requirements.txt`.
 
 ### Using a Virtual Environment with `venv`
 Here are the steps for creating a virtual environment and running this project in it.
