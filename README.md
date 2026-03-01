@@ -15,6 +15,7 @@ You can simply clone this reposity and run the script by accessing the app direc
 Here are the steps for creating a virtual environment and running this project in it.
 1. Open a terminal window and navigate to the project directory, once you have cloned it to your machine.
 2. Create a new virtual environment using the following command: `python3 -m venv myenv`. This will create a new directory named myenv in your project directory, containing the virtual environment.
+   - Note: `urllib3` is pinned to `>=2.6.3,<3`, which requires Python 3.9+.
 3. Activate the virtual environment: `source myenv/bin/activate`. This will activate the virtual environment, which will modify your shell's environment variables to use the Python interpreter and packages installed in the virtual environment.
 4. Install the required packages using the requirements.txt file: `pip3 install -r requirements.txt`. This will install all the required packages listed in the requirements.txt file.
 5. Run the project: `python3 main.py`. This will run the project using the Python interpreter installed in the virtual environment. To exit the virtual environment, simply run the deactivate command: `deactivate`.
